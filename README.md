@@ -1,107 +1,38 @@
-\# 💳 Payment Gateway Simulator
+PAYMENT GATEWAY SIMULATOR
+
+Project Overview
+
+Payment Gateway Simulator is a Python project that simulates how an online payment gateway processes transactions through multiple Payment Service Providers (PSPs).
+
+The system uses multiple PSP servers and automatically switches to another PSP when the current PSP is unavailable or the payment fails.
+
+This project was developed for learning and demonstrating payment gateway architecture, API communication, PSP failover, and transaction logging.
+
+Features
+
+- Simulates online payment processing
+- Supports multiple Payment Service Providers (PSPs)
+- Round-robin PSP selection
+- Automatic PSP failover
+- PSP health checking
+- Unique transaction ID generation
+- Transaction logging
+- Payment success and failure handling
+- Processing time tracking
+- Web-based payment interface
+
+Technologies Used
+
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
+- REST API
+- CSV
+- Git
+- GitHub
 
 
-
-A Flask-based payment gateway simulator that demonstrates payment orchestration across multiple Payment Service Providers (PSPs), round-robin routing, health checks, automatic failover, and transaction logging.
-
-
-
-\## 📌 Project Overview
-
-
-
-The Payment Gateway Simulator acts as an intermediate layer between a customer and multiple simulated Payment Service Providers.
-
-
-
-Instead of sending every payment request to a single PSP, the gateway:
-
-
-
-\- Routes payments across multiple PSPs
-
-\- Performs PSP health checks
-
-\- Detects unavailable PSPs
-
-\- Automatically switches to another PSP when a PSP fails
-
-\- Generates unique transaction IDs
-
-\- Records payment transactions and processing time
-
-
-
-This project demonstrates concepts used in distributed payment processing systems.
-
-
-
-\---
-
-
-
-\## 🏗️ Architecture
-
-
-
-```text
-
-\&#x20;                Customer
-
-\&#x20;                   |
-
-\&#x20;                   v
-
-\&#x20;         +--------------------+
-
-\&#x20;         |  Payment Gateway   |
-
-\&#x20;         |      Flask         |
-
-\&#x20;         |      :5000         |
-
-\&#x20;         +--------------------+
-
-\&#x20;                   |
-
-\&#x20;            PSP Health Check
-
-\&#x20;                   |
-
-\&#x20;       +-----------+-----------+
-
-\&#x20;       |           |           |
-
-\&#x20;       v           v           v
-
-\&#x20;    +------+    +------+    +------+
-
-\&#x20;    | PSP1 |    | PSP2 |    | PSP3 |
-
-\&#x20;    | :5001|    | :5002|    | :5003|
-
-\&#x20;    +------+    +------+    +------+
-
-\&#x20;       |           |           |
-
-\&#x20;       +-----------+-----------+
-
-\&#x20;                   |
-
-\&#x20;                   v
-
-\&#x20;           Payment Response
-
-\&#x20;                   |
-
-\&#x20;                   v
-
-\&#x20;         Transaction Logging
-
-\&#x20;                   |
-
-\&#x20;                   v
-
-\&#x20;         transactions.csv
 
 
